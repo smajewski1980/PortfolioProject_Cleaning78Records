@@ -1,0 +1,145 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --accent-gold: hsl(34, 62%, 65%);
+  --primary-gold: hsl(34, 62%, 30%);
+  --font-sans: "Montserrat", sans-serif;
+  --font-serif: "Heuristica", serif;
+  scroll-behavior: smooth;
+}
+
+img {
+  border-radius: 15px;
+  max-height: 300px;
+  max-width: 100%;
+}
+
+body {
+  background-color: black;
+  background-image: url("./images/background.png");
+  background-size: contain;
+  color: var(--primary-gold);
+  padding-inline: 5rem;
+}
+
+nav {
+  bottom: 1.5rem;
+  display: grid;
+  gap: 1.25rem;
+  left: 1.5rem;
+  position: fixed;
+}
+
+nav a {
+  color: var(--accent-gold);
+  font-family: var(--font-sans);
+  opacity: 0.5;
+  text-underline-offset: 14px;
+}
+
+nav a:last-child {
+  text-decoration: none;
+}
+
+a:visited:not(nav a) {
+  color: #5353fd;
+}
+
+h1 {
+  color: var(--primary-gold);
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 6.5vw, 4.5rem);
+  margin: 3.5rem;
+  padding-left: 0.35em;
+}
+
+h2 {
+  color: var(--primary-gold);
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 5vw, 3.25rem);
+  margin: 1.75rem 5.25rem;
+}
+
+hr {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--primary-gold),
+    transparent
+  );
+  border: none;
+  height: 2px;
+}
+
+.imgWrapper {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: 5.25em 5.25em 5.25em;
+}
+
+.image1 {
+  grid-column: 2 / 5;
+}
+
+.image2 {
+  grid-column: 4 / 7;
+}
+
+.section {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  margin-block: 1.5rem;
+  padding-block: 2em;
+}
+
+.section p {
+  color: var(--accent-gold);
+  font-size: 1.25em;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  margin-block: 0.5em;
+  padding-left: 1.5em;
+  width: 45ch;
+}
+
+#washingGif {
+  filter: brightness(0.25);
+  min-height: 300px;
+}
+
+.gif-wrapper {
+  position: relative;
+}
+
+.gif-play-btn {
+  background: var(--accent-gold);
+  border: 5px solid var(--primary-gold);
+  border-radius: 50%;
+  cursor: pointer;
+  display: grid;
+  font-size: 2.25rem;
+  height: 75px;
+  left: 50%;
+  place-items: center;
+  position: absolute;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 75px;
+}
+
+/* in firefox the playbutton icon for the gif */
+/* was just a little off center */
+@-moz-document url-prefix() {
+  .gif-play-btn {
+    padding-bottom: 5px;
+    padding-left: 3px;
+  }
+}
