@@ -25,7 +25,8 @@ body {
   background-image: url("./images/background.png");
   background-size: contain;
   color: var(--primary-gold);
-  padding-inline: 5rem;
+  padding-inline: 5vw;
+  /* padding-inline: 5rem; */
 }
 
 nav {
@@ -54,8 +55,9 @@ a:visited:not(nav a) {
 h1 {
   color: var(--primary-gold);
   font-family: var(--font-serif);
-  font-size: clamp(2.5rem, 6.5vw, 4.5rem);
-  margin: 3.5rem;
+  font-size: clamp(4rem, 6.5vw, 4.5rem);
+  margin-block: 3.5rem;
+  margin-left: 1.1em;
   padding-left: 0.35em;
 }
 
@@ -94,7 +96,7 @@ hr {
 .section {
   align-items: center;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 50% 50%;
   justify-items: center;
   margin-block: 1.5rem;
   padding-block: 2em;
@@ -102,7 +104,8 @@ hr {
 
 .section p {
   color: var(--accent-gold);
-  font-size: 1.25em;
+  font-size: clamp(1em, 1.25vw, 1.5em);
+  /* font-size: 1.25em; */
   font-family: var(--font-sans);
   font-weight: 500;
   line-height: 1.6;
@@ -142,5 +145,41 @@ hr {
   .gif-play-btn {
     padding-bottom: 5px;
     padding-left: 3px;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .section {
+    grid-template-columns: 1fr;
+  }
+
+  .imgWrapper {
+    margin-bottom: 10em;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  nav {
+    display: none;
+  }
+  h1 {
+    margin-left: 0;
+  }
+  .section p {
+    width: 35ch;
+  }
+  .imgWrapper {
+    margin-bottom: 0em;
+    /* grid-template-rows: 5.25em 5.25em; */
+    display: block;
+    width: 80%;
+  }
+  img:not(.imgWrapper img) {
+    width: 80%;
+    max-height: none;
+  }
+  #washingGif {
+    min-height: 150px;
+    width: 100%;
   }
 }
