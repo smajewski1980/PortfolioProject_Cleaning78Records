@@ -26,7 +26,6 @@ body {
   background-size: contain;
   color: var(--primary-gold);
   padding-inline: 5vw;
-  /* padding-inline: 5rem; */
 }
 
 nav {
@@ -105,7 +104,6 @@ hr {
 .section p {
   color: var(--accent-gold);
   font-size: clamp(1em, 1.25vw, 1.5em);
-  /* font-size: 1.25em; */
   font-family: var(--font-sans);
   font-weight: 500;
   line-height: 1.6;
@@ -159,6 +157,9 @@ hr {
 }
 
 @media screen and (max-width: 500px) {
+  body {
+    padding-inline: 0px;
+  }
   nav {
     display: none;
   }
@@ -166,11 +167,10 @@ hr {
     margin-left: 0;
   }
   .section p {
-    width: 35ch;
+    width: 30ch;
   }
   .imgWrapper {
     margin-bottom: 0em;
-    /* grid-template-rows: 5.25em 5.25em; */
     display: block;
     width: 80%;
   }
